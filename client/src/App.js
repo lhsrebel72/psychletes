@@ -1,41 +1,45 @@
-import {FaBrain} from "react-icons/fa"
-import logo from "./images/logo.PNG"
+import { Route, IndexRoute } from 'react-router';
+import {FaBrain, FaShoppingCart} from "react-icons/fa"
+import { Link } from "react-router-dom";
+import Main from "./Main"
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 import './App.css';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe('pk_test_51JjStYHGBlNUtONU7ERrw4ycasTD0cZxXYNfHWzAVboo3G5y7GHXjeAq19YlTT1rY3uUTRVEvYacsZ3dcefpMOV000QKO8GP8k');
 
 function App() {
   return (
     <div className="App">
-      <meta charSet="utf-8" />
-      <title>Psychletes</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <div className="wrapper">
+        <div class="shopping-cart">
+          <Link to="/cart">
+            <FaShoppingCart size="2em"/>
+          </Link>
+        </div>
         <div className="sidebar">
           <header id="sidebar-logo"><FaBrain size="5em"/></header>
           <nav id="menu" role="navigation">
             <div>
               <ul>
-                <li><a href="/shop.html">Merch</a></li>
-                <li><a href="/videos">Videos</a></li>
+                <li>
+                  <Link to="/">
+                    <a>Home</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products">
+                    <a>Merch</a>
+                  </Link>
+                </li>
                 <li><a href="/about">About</a></li>
               </ul>
             </div>
           </nav>
         </div>
-        <main className="main">
-          <div id="main-content">
-            <div className="centered-content" id="home"><img alt="" className="floating-img" src={logo} />
-              <p>hi my name is Tyler Sumpter<br />
-                I'm a hoe<br />
-                but i guess im a pretty good kicker too</p>
-              <p />
-              <div clas="fluid-width-video-wrapper"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen frameBorder={0} height={315} src="https://www.youtube.com/embed/0f7KhX2q77E" title="YouTube video player" width={560} /></div>
-              <p />
-            </div>
-            <p />
-            <div id="story">
-            </div>
-          </div>
-        </main>
+        <Main />
       </div>
     </div>
   );
