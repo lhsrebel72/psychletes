@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './app.css';
+import './App.css';
 import { Link } from "react-router-dom";
 import {FaBrain, FaShoppingCart} from "react-icons/fa"
 import Main from "./Main"
