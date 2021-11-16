@@ -5,17 +5,10 @@ import {FaBrain, FaShoppingCart} from "react-icons/fa"
 import Main from "./Main"
 
 export default class App extends Component {
-  
-  state = { username: null };
 
-  componentDidMount() {
-    fetch('/api/getUsername')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
-  }
+ state = { username: null };
 
   render() {
-    const { username } = this.state;
     return (
       <div className="App">
       <div className="wrapper">

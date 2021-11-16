@@ -10,9 +10,9 @@ export default function MainView() {
           <main className="main">
             <div id="main-content">
               <div className="centered-content" id="home"><img alt="" className="floating-img" src={logo} />
-                <p>hi my name is Tyler Sumpter<br />
-                  I'm a hoe<br />
-                  but i guess im a pretty good kicker too</p>
+                <p>Welcome to Psychletes!<br />
+                  My name is Tyler Sumpter and I'm the kicker for West Virgia Football<br />
+                  Our mission here at Psychletes is to help athletes reach their highest potential by pursuing better mental health!</p>
                 <p />
                 <div clas="fluid-width-video-wrapper"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen frameBorder={0} height={315} src="https://www.youtube.com/embed/0f7KhX2q77E" title="YouTube video player" width={560} /></div>
                 <p />
