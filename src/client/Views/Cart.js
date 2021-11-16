@@ -22,11 +22,13 @@ const ProductDisplay = () => (
     </form>
   </section>
 );
+
 const Message = ({ message }) => (
   <section>
     <p>{message}</p>
   </section>
 );
+
 export default function CartView() {
   const [message, setMessage] = useState("");
   useEffect(() => {
