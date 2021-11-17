@@ -9,7 +9,7 @@ export default function MainView() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <main className="main">
             <div id="main-content">
-              <div className="centered-content" id="home"><img alt="" className="floating-img" src={logo} />
+              <div className="centered-content" id="home"><img alt="" className="floating-logo-img" src={logo} />
                 <p>Welcome to Psychletes!<br />
                   My name is Tyler Sumpter and I'm the kicker for West Virgia Football<br />
                   Our mission here at Psychletes is to help athletes reach their highest potential by pursuing better mental health!</p>

@@ -45,7 +45,6 @@
   display: block;
   position: relative;
   padding: 0;
-  margin: 115px;
 }
 
 .App-header {
@@ -127,7 +126,17 @@
   }
 }
 
-.floating-img {
+.floating-product-img {
+  margin-top: 25px;
+  width: 750px;
+  height: 750px;
+  border-style: outset;
+  border-color: #737373;
+  box-shadow: black;
+  box-shadow: -11px 9px 14px 0px #5b5291;
+}
+
+.floating-logo-img {
   margin-top: 25px;
   width: 400px;
   height: 400px;
@@ -135,6 +144,16 @@
   border-color: #737373;
   box-shadow: black;
   box-shadow: -11px 9px 14px 0px #5b5291;
+}
+
+.productLabel {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 12px;
+}
+
+.productPrice {
+  padding-top: 10px;
 }
 
 .sidebar {

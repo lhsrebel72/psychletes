@@ -7,9 +7,9 @@ app.use(express.static('dist'));
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
 
-const stripe = require('stripe')('sk_test_51JtxJ2JHl2ZfjKrz4BPNiiPSUOq5ZhhdwB2p24iTO7JoeT5hK5Kna0rHsasIkEP7SXXT50cSWHW7m8LdfhiUJvlX00u5ZBXtsq');
+const stripe = require('stripe')('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');
 app.use(express.static('public'));
-const YOUR_DOMAIN = 'http://localhost:4242/';
+const YOUR_DOMAIN = 'http://www.psychletes.com/';
 
 
 app.post('/create-checkout-session', async (req, res) => {

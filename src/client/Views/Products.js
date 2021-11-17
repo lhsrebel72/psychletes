@@ -29,17 +29,17 @@ export default function ProductView() {
             <div class="products-grid">
                 <div class="product-grid-item">
                     <form action={"/create-checkout-session?id=" + product1?.id} method="POST">
-                        <input type="image" className="floating-img" src={product1?.images[0]}></input>
+                        <input type="image" className="floating-product-img" src={product1?.images[0]}></input>
                     </form>
-                    <div>{product1?.name}</div>
-                    <div> $29.99</div>
+                    <div className="productLabel">{product1?.name}</div>
+                    <div>$29.99</div>
                 </div>
                 <div class="product-grid-item">
                     <form action={"/create-checkout-session?id=" + product2?.id} method="POST">
-                        <input type="image" className="floating-img" src={product2?.images[0]}></input>
+                        <input type="image" className="floating-product-img" src={product2?.images[0]}></input>
                     </form>
-                    <div>{product2?.name}</div>
-                    <div> $29.99</div>
+                    <div className ="productLabel">{product2?.name}</div>
+                    <div>$29.99</div>
                 </div>
             </div>
         </div>
