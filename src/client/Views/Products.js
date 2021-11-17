@@ -36,9 +36,7 @@ export default function ProductView() {
                 </div>
                 <div class="product-grid-item">
                     <form action={"/create-checkout-session?id=" + product2?.id} method="POST">
-                        <button type="submit">
-                            <input type="image" className="floating-img" src={product2?.images[0]}></input>
-                        </button>
+                        <input type="image" className="floating-img" src={product2?.images[0]}></input>
                     </form>
                     <div>{product2?.name}</div>
                     <div> $29.99</div>
