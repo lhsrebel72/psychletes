@@ -1,5 +1,4 @@
 import logo from "../images/logo.PNG"
-import ProductView from "./Products"
 
 export default function MainView() {
     return (
@@ -11,7 +10,7 @@ export default function MainView() {
             <div id="main-content">
               <div className="centered-content" id="home"><img alt="" className="floating-logo-img" src={logo} />
                 <p>Welcome to Psychletes!<br />
-                  My name is Tyler Sumpter and I'm the kicker for West Virgia Football<br />
+                  My name is Tyler Sumpter and I'm the punter for West Virgia Football<br />
                   Our mission here at Psychletes is to help athletes reach their highest potential by pursuing better mental health!</p>
                 <p />
                 <div clas="fluid-width-video-wrapper"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen frameBorder={0} height={315} src="https://www.youtube.com/embed/0f7KhX2q77E" title="YouTube video player" width={560} /></div>
