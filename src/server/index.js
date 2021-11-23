@@ -1,4 +1,5 @@
 const os = require('os');
+const path = require('path');
 var http = require('http') , https = require('https') , express = require('express') , app = express();
 
 http.createServer(app).listen(80); https.createServer(app).listen(443);
@@ -63,9 +64,26 @@ app.post('/create-checkout-session', async (req, res) => {
 
 app.get('/get-products', async (req, res) => {
   const products = await stripe.products.list({
-    limit: 3,
+    limit: 20,
   });
   res.send(products);
+});
+
+app.get('/get-product-price-by-id', async (req, res) => {
+  const product_id = req.query.id;
+  const price = await stripe.prices.list({
+    limit: 1,
+    product: product_id,
+  });
+  res.send(price);
+});
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
 });
 
 app.listen(4242, () => console.log('Running on port 4242'));

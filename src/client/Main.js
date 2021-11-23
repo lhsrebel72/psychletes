@@ -8,8 +8,8 @@ const Main = () => {
   return (
     <Routes> {/* The Switch decides which component to show based on the current URL.*/}
       <Route exact path='/' element={<HomeView/>}></Route>
-      <Route exact path='/products' element={<ProductsView/>}></Route>
-      <Route exact path='/cart' element={<CartView/>}></Route>
+      <Route path='/products' element={<ProductsView/>}></Route>
+      <Route path='/cart' element={<CartView/>}></Route>
     </Routes>
   );
 }

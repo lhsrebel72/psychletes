@@ -7,6 +7,7 @@ import ProductView from "./Product";
 export default function ProductsView() {
     const [productData, setProductData] = useState("");
     var products = null;
+    var product = null;
 
     useEffect(() => {
       getProductsWithFetch();
@@ -20,6 +21,7 @@ export default function ProductsView() {
 
     if(productData !== null && productData !== ""){
         products = productData.data;
+        product = products[0];
     }
 
     return (
