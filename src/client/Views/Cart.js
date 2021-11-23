@@ -15,7 +15,7 @@ const ProductDisplay = () => (
       <h5>$10.00</h5>
       </div>
     </div>
-    <form action="/create-checkout-session" method="POST">
+    <form action={"/create-checkout-session?ids=" + productUrl} method="POST">
       <button type="submit">
         Checkout
       </button>
@@ -43,6 +43,14 @@ export default function CartView() {
       );
     }
   }, []);
+  var productIds = [];
+  var productUrl;
+
+  for (var key in productIds) {
+    if (productIds.hasOwnProperty(key)) {
+        productUrl.push(key + '=' + encodeURIComponent(productIds[key]));
+    }
+}
   return message ? (
     <Message message={message} />
   ) : (
