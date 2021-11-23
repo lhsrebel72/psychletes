@@ -19,6 +19,32 @@ app.post('/create-checkout-session', async (req, res) => {
     product: product_id,
   });
   const session = await stripe.checkout.sessions.create({
+    shipping_address_collection: {
+      allowed_countries: ['US'],
+    },
+    shipping_options: [
+      {
+        shipping_rate_data: {
+          type: 'fixed_amount',
+          fixed_amount: {
+            amount: 10,
+            currency: 'usd',
+          },
+          display_name: 'Base shipping',
+          //Delivers between 5-7 business days
+          delivery_estimate: {
+            minimum: {
+              unit: 'business_day',
+              value: 5,
+            },
+            maximum: {
+              unit: 'business_day',
+              value: 7,
+            },
+          }
+        }
+      }
+    ],
     line_items: [
       {
         price: price?.data[0]?.id,
