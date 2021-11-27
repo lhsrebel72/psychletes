@@ -14,7 +14,9 @@ const YOUR_DOMAIN = 'http://www.psychletes.com/';
 
 
 app.post('/create-checkout-session', async (req, res) => {
+  const product_id_array = req.query.ids;
   const product_id = req.query.id;
+  const size = req.query.size
   const price = await stripe.prices.list({
     limit: 1,
     product: product_id,
@@ -49,7 +51,8 @@ app.post('/create-checkout-session', async (req, res) => {
     line_items: [
       {
         price: price?.data[0]?.id,
-        quantity: 1
+        quantity: 1,
+        description: size
       },
     ],
     payment_method_types: [

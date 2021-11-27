@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Component } from 'react';
+import { Link } from "react-router-dom";
 
 export default function ProductView({product}) {
     const [priceData, setPriceData] = useState("");
@@ -19,9 +20,9 @@ export default function ProductView({product}) {
 
     return (
         <div class="product-grid-item">
-            <form action={"/create-checkout-session?id=" + product?.id} method="POST">
+            <Link to={{ pathname: '/productDescription'}} state={{ product: product}}>
                 <input type="image" className="floating-product-img" src={product?.images[0]}></input>
-            </form>
+            </Link>
             <div className="productLabel">{product?.name}</div>
             <div className="productPrice">{price}</div>
         </div>
